@@ -1,9 +1,10 @@
-import ToDos from './components/ToDos'
+import ToDoContainer from './components/ToDoContainer'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function App() {
   return (
-    <ToDos />
+    <ToDoContainer />
   );
 }
 

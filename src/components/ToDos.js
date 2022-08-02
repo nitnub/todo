@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import data from '../data/dummy-db';
-
+import { Button } from 'react-bootstrap'
 function ToDos() {
 
 
@@ -8,6 +8,14 @@ function ToDos() {
   const [newTodo, setNewTodo] = useState('');
   const [id, setId] = useState(todos.length + 1);
   const [failedValidation, setFailedValidation] = useState(false);
+
+
+  const styles = {
+
+  }
+
+
+
   // addTodo
   const addTodo = (e) => {
     e.preventDefault();
@@ -39,25 +47,27 @@ function ToDos() {
   return (
     <div className="container">
       <div className="header">
-        <h1>To-Dos</h1>
+     
       </div>
       <div className="todo-list">
         {todos.map((todo) => (
           <div key={todo.id} className="todo" style={todoStyle}>
             <div id={todo.id}>{todo.task}</div>
-            <button id={todo.id} onClick={removeTodo}>
+            <Button id={todo.id} onClick={removeTodo}>
               X
-            </button>
+            </Button>
           </div>
         ))}
       </div>
       <form onSubmit={addTodo}>
         <input
+        className="form-control"
           value={newTodo}
           type="text"
+          placeholder="Add To-Do..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <input type="submit" value="Add Todo" />
+        <input className="btn btn-primary" type="submit" value="Add Todo" />
         {failedValidation && (
           <div style={{ color: 'red' }}>Please enter a To-Do</div>
         )}
