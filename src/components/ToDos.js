@@ -46,13 +46,11 @@ function ToDos() {
 
   return (
     <div className="container">
-      <div className="header">
-     
-      </div>
+  
       <div className="todo-list">
         {todos.map((todo) => (
           <div key={todo.id} className="todo" style={todoStyle}>
-            <div id={todo.id}>{todo.task}</div>
+            <div className="todo-text" id={todo.id}>{todo.task}</div>
             <Button id={todo.id} onClick={removeTodo}>
               X
             </Button>
@@ -67,10 +65,11 @@ function ToDos() {
           placeholder="Add To-Do..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <input className="btn btn-primary" type="submit" value="Add Todo" />
         {failedValidation && (
           <div style={{ color: 'red' }}>Please enter a To-Do</div>
         )}
+        <input className="btn btn-primary btn-submit" type="submit" value="Add Todo" />
+        
       </form>
     </div>
   );

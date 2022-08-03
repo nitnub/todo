@@ -1,0 +1,92 @@
+
+
+:root {
+  --background: #713c46;
+  --container: #eeeeee;
+  --button: #e16c5b;
+  --button: #ad5b4e;
+  --button-h: #462c2f;
+  /* --background: #b19d99;
+  --container: #f0edea;
+  --button: #c1d2d8; */
+
+
+
+  --background: #997782;
+  --container: #fff7f7;
+  --container: #f8efef;
+  --button: #f4ecef;
+  --button: #e4cfd7;
+  --clr-todo: #f8d8d8;
+  --button-h: #462c2f;
+  --clr-dark: #674348;
+  --clr-todo: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--clr-dark);
+}
+
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  /* background-color: var(--button); */
+
+}
+
+.todo-container {
+  background-color: var(--container);
+  width: 350px;
+  border-radius: 6px;
+}
+
+.todo-list {
+  margin: 12px 0;
+}
+
+.header {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-todo);
+  /* border:black solid 1px; */
+  border-radius: 4px;
+  margin-bottom: 4px;
+  padding-left: 4px;
+
+  /* max-width: inherit(100%); */
+}
+
+.todo-text {
+  word-wrap:break-word;
+  max-width: 85%;
+}
+
+.todo:last-of-type {
+  margin-bottom: 0;
+}
+
+.btn {
+  background-color: var(--button);
+  /* background-color: var(--background); */
+  border: none;
+  color: var(--clr-dark);
+}
+
+.btn:hover {
+  background-color: var(--clr-dark);
+}
+
+.btn-submit {
+  margin: 16px 0;
+}
