@@ -1,17 +1,13 @@
-
-
 :root {
+  /* Group 1 */
   --background: #713c46;
   --container: #eeeeee;
   --button: #e16c5b;
   --button: #ad5b4e;
   --button-h: #462c2f;
-  /* --background: #b19d99;
-  --container: #f0edea;
-  --button: #c1d2d8; */
 
 
-
+/* Group 2 */
   --background: #997782;
   --container: #fff7f7;
   --container: #f8efef;
@@ -21,22 +17,23 @@
   --button-h: #462c2f;
   --clr-dark: #674348;
   --clr-todo: #ffffff;
+  --clr-scrl-th: #674348;
+  --clr-scrl-bg: #ffffff;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   color: var(--clr-dark);
 }
 
-
-
 body {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background);
-  /* background-color: var(--button); */
-
 }
 
 .todo-container {
@@ -47,24 +44,73 @@ body {
 
 .todo-list {
   margin: 12px 0;
+  max-height: 450px;
+  height: auto;
+  overflow: auto;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--clr-scrl-bg);
+  background-color: var(--container);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--clr-scrl-th);  
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-h);
 }
 
 .header {
   text-align: center;
   padding: 12px 0;
+  background-color: var(--clr-todo);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.tab-bar {
+  background-color: var(--clr-todo);
+}
+
+.nav-link {
+  color: var(--clr-dark);
+}
+
+.nav-link:hover {
+  color: var(--button-h)
+}
+.nav-link:active {
+  background-color: var(--button);
+}
+
+.nav-tabs {
+  border-bottom: none;
+  text-decoration: none;
+}
+.nav-link.active {
+  border-bottom: var(--container);
+ background-color: var(--container) !important; /* override bootstrap */
 }
 
 .todo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--clr-todo);
-  /* border:black solid 1px; */
   border-radius: 4px;
   margin-bottom: 4px;
   padding-left: 4px;
-
-  /* max-width: inherit(100%); */
+  min-height: 2.5em;
 }
 
 .todo-text {
@@ -78,15 +124,37 @@ body {
 
 .btn {
   background-color: var(--button);
-  /* background-color: var(--background); */
   border: none;
   color: var(--clr-dark);
+  border-radius: 4px;
+
+}
+
+.btn-todo {
+  position: absolute;
+  right: 0;
+  top: 0;
+    height: 100%;
+  
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .btn:hover {
   background-color: var(--clr-dark);
 }
 
+
+.error-alert {
+  padding: 4px 
+}
+
+/* TODO: update form control styling */
+.form-control {
+
+}
+
+/* TODO: update submit styling */
 .btn-submit {
-  margin: 16px 0;
+  margin-bottom: 16px;
 }

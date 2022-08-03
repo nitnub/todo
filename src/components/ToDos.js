@@ -10,13 +10,7 @@ function ToDos() {
   const [failedValidation, setFailedValidation] = useState(false);
 
 
-  const styles = {
 
-  }
-
-
-
-  // addTodo
   const addTodo = (e) => {
     e.preventDefault();
     setFailedValidation(false);
@@ -30,7 +24,8 @@ function ToDos() {
       setFailedValidation(true);
     }
   };
-  // removeTodo
+
+
   const removeTodo = (e) => {
     const todosCopy = [...todos];
     const filteredTodos = todosCopy.filter(
@@ -51,7 +46,7 @@ function ToDos() {
         {todos.map((todo) => (
           <div key={todo.id} className="todo" style={todoStyle}>
             <div className="todo-text" id={todo.id}>{todo.task}</div>
-            <Button id={todo.id} onClick={removeTodo}>
+            <Button className="btn-todo" id={todo.id} onClick={removeTodo}>
               X
             </Button>
           </div>
@@ -65,9 +60,8 @@ function ToDos() {
           placeholder="Add To-Do..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        {failedValidation && (
-          <div style={{ color: 'red' }}>Please enter a To-Do</div>
-        )}
+        <div className="error-alert" style={{ color: 'red' }}>{failedValidation ? 'Please enter a To-Do' :''} &nbsp;</div>
+   
         <input className="btn btn-primary btn-submit" type="submit" value="Add Todo" />
         
       </form>

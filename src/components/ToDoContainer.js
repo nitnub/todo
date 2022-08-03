@@ -10,7 +10,7 @@ const ToDoContainer = () => {
         <h1>To-Dos</h1>
       </div>
       <div className="tab-container">
-        <Tabs activeKey={activeTab} onSelect={setActiveTab}>
+        <Tabs className="tab-bar" activeKey={activeTab} onSelect={setActiveTab}>
           <Tab eventKey="tab-one" title="To-Dos">
             <ToDos />
           </Tab>
