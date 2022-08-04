@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import data from '../data/dummy-db';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 function ToDos() {
-
-
   const [todos, setTodos] = useState(data);
   const [newTodo, setNewTodo] = useState('');
   const [id, setId] = useState(todos.length + 1);
   const [failedValidation, setFailedValidation] = useState(false);
-
-
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -23,8 +19,9 @@ function ToDos() {
     } else {
       setFailedValidation(true);
     }
-  };
 
+ 
+  };
 
   const removeTodo = (e) => {
     const todosCopy = [...todos];
@@ -36,16 +33,16 @@ function ToDos() {
 
   const todoStyle = {
     display: 'flex',
-    
-  }
+  };
 
   return (
     <div className="container">
-  
       <div className="todo-list">
         {todos.map((todo) => (
           <div key={todo.id} className="todo" style={todoStyle}>
-            <div className="todo-text" id={todo.id}>{todo.task}</div>
+            <div className="todo-text" id={todo.id}>
+              {todo.task}
+            </div>
             <Button className="btn-todo" id={todo.id} onClick={removeTodo}>
               X
             </Button>
@@ -54,16 +51,21 @@ function ToDos() {
       </div>
       <form onSubmit={addTodo}>
         <input
-        className="form-control"
+          className="form-control"
           value={newTodo}
           type="text"
           placeholder="Add To-Do..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <div className="error-alert" style={{ color: 'red' }}>{failedValidation ? 'Please enter a To-Do' :''} &nbsp;</div>
-   
-        <input className="btn btn-primary btn-submit" type="submit" value="Add Todo" />
-        
+        <div className="error-alert" style={{ color: 'red' }}>
+          {failedValidation ? 'Please enter a To-Do' : ''} &nbsp;
+        </div>
+
+        <input
+          className="btn btn-primary btn-submit"
+          type="submit"
+          value="Add Todo"
+        />
       </form>
     </div>
   );

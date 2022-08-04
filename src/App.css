@@ -58,15 +58,18 @@ body {
 ::-webkit-scrollbar-track {
   background-color: var(--clr-scrl-bg);
   background-color: var(--container);
+  /* border: 1px solid var(--background);   */
 }
  
 ::-webkit-scrollbar-thumb {
   background: var(--clr-scrl-th);  
+  background: var(--background);  
   border-radius: 1px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--button-h);
+  background: var(--clr-scrl-th); 
 }
 
 .header {
