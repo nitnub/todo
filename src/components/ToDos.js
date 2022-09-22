@@ -40,9 +40,11 @@ function ToDos() {
       <div className="todo-list">
         {todos.map((todo) => (
           <div key={todo.id} className="todo" style={todoStyle}>
+ 
             <div className="todo-text" id={todo.id}>
               {todo.task}
             </div>
+          
             <Button className="btn-todo" id={todo.id} onClick={removeTodo}>
               X
             </Button>
