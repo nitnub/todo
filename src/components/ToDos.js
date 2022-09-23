@@ -64,6 +64,7 @@ function ToDos() {
         </div>
 
         <input
+          id="add-todo"
           className="btn btn-primary btn-submit"
           type="submit"
           value="Add Todo"
