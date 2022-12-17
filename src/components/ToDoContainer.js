@@ -45,10 +45,10 @@ const ToDoContainer = () => {
 
       <div className="tab-container">
         <Tabs className="tab-bar" activeKey={activeTab} onSelect={setActiveTab}>
-          <Tab eventKey="tab-one" title="To-Dos">
+          <Tab eventKey="tab-one" title="Active">
             <ToDos todos={todos} setTodos={setTodos} />
           </Tab>
-          <Tab eventKey="tab-two" title="Completed">
+          <Tab eventKey="tab-two" title="Complete">
             {noCompletedTasks() && (
               <p className="completed-label">No completed tasks yet...</p>
             )}
