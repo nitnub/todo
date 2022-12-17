@@ -36,9 +36,8 @@ const ToDoContainer = () => {
 
     return noCompletedTasks;
   };
+
   return (
-
-
     <div className="todo-container">
       <div className="header">
         <h1>To-Dos</h1>
@@ -50,7 +49,9 @@ const ToDoContainer = () => {
             <ToDos todos={todos} setTodos={setTodos} />
           </Tab>
           <Tab eventKey="tab-two" title="Completed">
-            {noCompletedTasks() && <p className="completed-label">No completed tasks yet...</p>}
+            {noCompletedTasks() && (
+              <p className="completed-label">No completed tasks yet...</p>
+            )}
             <ToDos todos={todos} setTodos={setTodos} status={'complete'} />
           </Tab>
         </Tabs>
@@ -60,6 +61,7 @@ const ToDoContainer = () => {
         <div className="update-container">
           <form onSubmit={addTodo}>
             <input
+              name="add-to-do"
               className="form-control"
               value={newTodo}
               type="text"
@@ -73,7 +75,7 @@ const ToDoContainer = () => {
               id="add-todo"
               className="btn btn-primary btn-submit"
               type="submit"
-              value="Add Todo"
+              value="Add To-Do"
             />
           </form>
         </div>
@@ -84,7 +86,6 @@ const ToDoContainer = () => {
         // null
       )}
     </div>
-
   );
 };
 

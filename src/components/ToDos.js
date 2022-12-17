@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-
 import ToDo from './ToDo';
 
 function ToDos({ status, todos, setTodos }) {
+
   const updateStatus = (e) => {
     const id = e.target.id;
-    console.log(e);
     const todosCopy = [...todos];
 
     const filteredTodos = todosCopy.map((todo) => {
@@ -17,6 +16,7 @@ function ToDos({ status, todos, setTodos }) {
     });
     setTodos(() => filteredTodos);
   };
+  
 
   const removeTodo = (e) => {
     const todosCopy = [...todos];
